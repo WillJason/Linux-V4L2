@@ -65,13 +65,6 @@ int main(int argc, char **argv) {
 	cam->height = 480;
 	cam->display_depth = 5; /* RGB24 */
 
-	/*
-	open_camera(cam);
-	init_camera(cam);
-	start_capturing(cam);
-	init_encoder(cam);
-	init_file();
-	*/
 	v4l2_init(cam);
 
 	if (0 != pthread_create(&mythread, NULL, (void *) capture_encode_thread, NULL)) {

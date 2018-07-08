@@ -307,7 +307,6 @@ void init_camera(struct camera *cam) {
 	//  fmt->fmt.pix.pixelformat = V4L2_PIX_FMT_YUV420  //yuv420 但是我电脑不支持
 	fmt->fmt.pix.field = V4L2_FIELD_INTERLACED; //隔行扫描
 
-	// 设置摄像头使用某种格式
 	if (-1 == xioctl(cam->fd, VIDIOC_S_FMT, fmt))
 		errno_exit("VIDIOC_S_FMT");
 
